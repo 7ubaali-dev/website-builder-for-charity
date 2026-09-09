@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free websites for New Zealand charities</title>
+<meta name="description" content="I build websites for New Zealand charities and community groups at no charge. You cover the hosting and domain, which you pay directly to the provider.">
+
+<!--
+  ============================================================
+  THINGS TO CHANGE BEFORE YOU PUBLISH
+  1. Search for  LINKEDIN-URL  and paste your LinkedIn profile link
+  2. Check the hosting cost figures in the "What it costs you" band
+  3. Once you've built one or two sites, add a Recent work section
+  ============================================================
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Public+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --ink: #1a0f2b;
+    --ink-2: #2a1a45;
+    --paper: #f7f3fb;
+    --white: #ffffff;
+    --rose: #ff4d7d;
+    --rose-soft: #ffe3ec;
+    --rose-deep: #b81f56;
+    --mint: #34d8b4;
+    --mint-soft: #d8f6ec;
+    --mint-deep: #0d7862;
+    --muted: #6b5b80;
+    --dim: #c9bade;
+    --line: rgba(26, 15, 43, .13);
+    --display: "Bricolage Grotesque", system-ui, sans-serif;
+    --body: "Public Sans", system-ui, sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 17px;
+    line-height: 1.65;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap { width: 100%; max-width: 880px; margin: 0 auto; padding: 0 24px; }
+
+  h1, h2, h3 {
+    font-family: var(--display);
+    font-weight: 800;
+    line-height: 1.03;
+    letter-spacing: -0.022em;
+    margin: 0;
+  }
+
+  p { max-width: 62ch; }
+  a { color: inherit; }
+
+  :focus-visible { outline: 3px solid var(--mint); outline-offset: 3px; }
+
+  /* ---------- scroll progress ---------- */
+
+  #progress {
+    position: fixed;
+    top: 0; left: 0;
+    height: 3px;
+    width: 0%;
+    background: linear-gradient(90deg, var(--rose), var(--mint));
+    z-index: 99;
+  }
+
+  /* ---------- hero ---------- */
+
+  .hero {
+    position: relative;
+    background: var(--ink);
+    color: var(--paper);
+    padding: clamp(84px, 15vw, 172px) 0 clamp(68px, 10vw, 124px);
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  .glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  .glow-a {
+    width: 620px; height: 620px;
+    background: rgba(255, 77, 125, .42);
+    top: -220px; right: -140px;
+    animation: drift-a 19s ease-in-out infinite alternate;
+  }
+
+  .glow-b {
+    width: 520px; height: 520px;
+    background: rgba(52, 216, 180, .26);
+    bottom: -260px; left: -160px;
+    animation: drift-b 23s ease-in-out infinite alternate;
+  }
+
+  @keyframes drift-a {
+    from { transform: translate(0, 0) scale(1); }
+    to   { transform: translate(-110px, 80px) scale(1.16); }
+  }
+
+  @keyframes drift-b {
+    from { transform: translate(0, 0) scale(1); }
+    to   { transform: translate(130px, -70px) scale(1.12); }
+  }
+
+  .hero h1 {
+    font-size: clamp(2.7rem, 8.6vw, 5.6rem);
+    max-width: 14ch;
+  }
+
+  .hero h1 .w {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(28px) rotate(2deg);
+    animation: word-in .8s cubic-bezier(.19, .9, .28, 1) forwards;
+  }
+
+  @keyframes word-in {
+    to { opacity: 1; transform: none; }
+  }
+
+  .hero h1 .accent { color: var(--rose); }
+
+  .hero .lede {
+    font-size: clamp(1.05rem, 2.4vw, 1.34rem);
+    color: var(--dim);
+    margin: 32px 0 0;
+    max-width: 46ch;
+  }
+
+  .hero .aside {
+    margin-top: 46px;
+    padding-top: 22px;
+    border-top: 1px solid rgba(255, 77, 125, .4);
+    font-size: 0.95rem;
+    color: #9c8bb5;
+    max-width: 48ch;
+  }
+
+  .hero-actions {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px 26px;
+    align-items: center;
+  }
+
+  .btn {
+    display: inline-block;
+    background: var(--rose);
+    color: #ffffff;
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 1.05rem;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 999px;
+    box-shadow: 0 8px 22px rgba(255, 77, 125, .32);
+    transition: transform .22s cubic-bezier(.2,.8,.3,1), box-shadow .22s ease, background .22s ease;
+  }
+
+  .btn:hover {
+    background: #ff6690;
+    transform: translateY(-3px);
+    box-shadow: 0 14px 30px rgba(255, 77, 125, .42);
+  }
+
+  .btn:active { transform: translateY(-1px); }
+
+  .btn-quiet {
+    background: none;
+    color: var(--paper);
+    box-shadow: none;
+    padding: 6px 0;
+    border-radius: 0;
+    position: relative;
+  }
+
+  .btn-quiet::after {
+    content: "";
+    position: absolute;
+    left: 0; bottom: 0;
+    height: 2px; width: 100%;
+    background: var(--mint);
+    transform: scaleX(.35);
+    transform-origin: left;
+    transition: transform .3s cubic-bezier(.2,.8,.3,1);
+  }
+
+  .btn-quiet:hover {
+    background: none;
+    transform: none;
+    box-shadow: none;
+  }
+
+  .btn-quiet:hover::after { transform: scaleX(1); }
+
+  /* ---------- reveal on scroll ---------- */
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(26px);
+    transition: opacity .75s ease, transform .75s cubic-bezier(.2,.8,.3,1);
+  }
+
+  .reveal.in { opacity: 1; transform: none; }
+
+  .reveal.d1 { transition-delay: .09s; }
+  .reveal.d2 { transition-delay: .18s; }
+
+  /* ---------- the split band ---------- */
+
+  .deal { display: grid; grid-template-columns: 1fr 1fr; }
+
+  .deal > div { padding: clamp(48px, 7vw, 78px) clamp(24px, 5vw, 58px); }
+
+  .deal .free { background: var(--rose-soft); }
+  .deal .cost { background: var(--white); }
+
+  .deal h2 {
+    font-size: clamp(1.5rem, 3.4vw, 2.1rem);
+    margin-bottom: 24px;
+  }
+
+  .deal .free h2 { color: var(--rose-deep); }
+
+  .deal ul { margin: 0; padding: 0; list-style: none; }
+
+  .deal li {
+    padding: 11px 0 11px 26px;
+    border-bottom: 1px solid var(--line);
+    font-size: 1rem;
+    position: relative;
+  }
+
+  .deal li::before {
+    content: "";
+    position: absolute;
+    left: 2px; top: 21px;
+    width: 9px; height: 9px;
+    border-radius: 50%;
+    background: var(--rose);
+  }
+
+  .deal .cost li::before { background: var(--mint); }
+
+  .deal li:last-child { border-bottom: 0; }
+
+  .deal .note {
+    margin: 24px 0 0;
+    font-size: 0.9rem;
+    line-height: 1.58;
+    color: var(--muted);
+  }
+
+  /* ---------- generic sections ---------- */
+
+  .band { padding: clamp(68px, 10vw, 116px) 0; }
+  .band-white { background: var(--white); }
+
+  .band h2 {
+    font-size: clamp(1.85rem, 4.6vw, 2.8rem);
+    max-width: 20ch;
+    margin-bottom: 30px;
+  }
+
+  .band p + p { margin-top: 18px; }
+
+  .sig {
+    margin-top: 36px;
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 1.12rem;
+  }
+
+  .sig span {
+    display: block;
+    font-family: var(--body);
+    font-weight: 400;
+    font-size: 0.92rem;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+
+  /* ---------- included list ---------- */
+
+  .included {
+    margin: 38px 0 0;
+    padding: 0;
+    list-style: none;
+    border-top: 1px solid var(--line);
+  }
+
+  .included li {
+    display: grid;
+    grid-template-columns: 15rem 1fr;
+    gap: 8px 28px;
+    padding: 20px 14px 20px 0;
+    border-bottom: 1px solid var(--line);
+    transition: background .25s ease, padding-left .25s cubic-bezier(.2,.8,.3,1);
+  }
+
+  .included li:hover {
+    background: var(--rose-soft);
+    padding-left: 14px;
+  }
+
+  .included .what {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 1.05rem;
+  }
+
+  .included .detail {
+    color: var(--muted);
+    font-size: 0.98rem;
+    line-height: 1.6;
+  }
+
+  /* ---------- steps ---------- */
+
+  .steps {
+    margin: 40px 0 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: step;
+    position: relative;
+  }
+
+  .steps::before {
+    content: "";
+    position: absolute;
+    left: 21px; top: 8px; bottom: 46px;
+    width: 2px;
+    background: var(--line);
+  }
+
+  .steps li {
+    counter-increment: step;
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    gap: 22px;
+    padding-bottom: 36px;
+    position: relative;
+  }
+
+  .steps li::before {
+    content: counter(step);
+    display: grid;
+    place-items: center;
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: var(--ink);
+    color: var(--white);
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: 1.05rem;
+    transform: scale(.4);
+    opacity: 0;
+    transition: transform .5s cubic-bezier(.3,1.4,.5,1), opacity .4s ease;
+  }
+
+  .steps li.in::before { transform: scale(1); opacity: 1; }
+
+  .steps li:nth-child(even)::before { background: var(--rose); }
+
+  .steps h3 {
+    font-size: 1.16rem;
+    font-weight: 600;
+    margin: 8px 0 6px;
+  }
+
+  .steps p { margin: 0; color: var(--muted); font-size: 0.98rem; }
+
+  /* ---------- faq ---------- */
+
+  .faq { margin-top: 34px; border-top: 1px solid var(--line); }
+
+  details { border-bottom: 1px solid var(--line); }
+
+  summary {
+    cursor: pointer;
+    list-style: none;
+    padding: 21px 46px 21px 0;
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 1.08rem;
+    position: relative;
+    transition: color .2s ease;
+  }
+
+  summary:hover { color: var(--rose-deep); }
+  summary::-webkit-details-marker { display: none; }
+
+  summary::after {
+    content: "";
+    position: absolute;
+    right: 6px; top: 50%;
+    width: 15px; height: 15px;
+    margin-top: -8px;
+    background:
+      linear-gradient(var(--rose), var(--rose)) center/100% 2px no-repeat,
+      linear-gradient(var(--rose), var(--rose)) center/2px 100% no-repeat;
+    transition: transform .3s cubic-bezier(.2,.8,.3,1);
+  }
+
+  details[open] summary::after { transform: rotate(135deg); }
+
+  details p {
+    margin: 0 0 24px;
+    color: var(--muted);
+    animation: answer-in .35s ease both;
+  }
+
+  @keyframes answer-in {
+    from { opacity: 0; transform: translateY(-6px); }
+    to   { opacity: 1; transform: none; }
+  }
+
+  /* ---------- contact ---------- */
+
+  .contact {
+    position: relative;
+    background: var(--ink);
+    color: var(--paper);
+    padding: clamp(70px, 10vw, 120px) 0;
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  .contact .glow-c {
+    position: absolute;
+    width: 560px; height: 560px;
+    border-radius: 50%;
+    filter: blur(90px);
+    background: rgba(255, 77, 125, .3);
+    right: -180px; bottom: -240px;
+    z-index: -1;
+    animation: drift-b 21s ease-in-out infinite alternate;
+  }
+
+  .contact h2 { font-size: clamp(1.95rem, 5vw, 3.1rem); max-width: 16ch; margin-bottom: 24px; }
+  .contact p { color: var(--dim); max-width: 48ch; }
+
+  .contact .mail {
+    display: inline-block;
+    margin-top: 36px;
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: clamp(1.1rem, 3vw, 1.55rem);
+    color: var(--mint);
+    text-decoration: none;
+    padding-bottom: 6px;
+    position: relative;
+    word-break: break-all;
+  }
+
+  .contact .mail::after {
+    content: "";
+    position: absolute;
+    left: 0; bottom: 0;
+    height: 2px; width: 100%;
+    background: var(--mint);
+    transform: scaleX(.3);
+    transform-origin: left;
+    transition: transform .35s cubic-bezier(.2,.8,.3,1);
+  }
+
+  .contact .mail:hover::after { transform: scaleX(1); }
+
+  footer {
+    background: var(--ink);
+    color: #8a789f;
+    font-size: 0.85rem;
+    padding: 0 0 48px;
+  }
+
+  footer a { color: var(--dim); }
+
+  /* ---------- skills ---------- */
+
+  .skillset {
+    margin-top: 36px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .skillset h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0;
+    margin-bottom: 16px;
+    color: var(--muted);
+  }
+
+  .pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .pills li {
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--white);
+    padding: 8px 17px;
+    font-size: .95rem;
+    transition: transform .22s cubic-bezier(.2,.8,.3,1), border-color .22s ease, background .22s ease;
+  }
+
+  .pills li:hover {
+    transform: translateY(-3px);
+    border-color: var(--rose);
+    background: var(--rose-soft);
+  }
+
+  .pills.code li:hover {
+    border-color: var(--mint-deep);
+    background: var(--mint-soft);
+  }
+
+  .skills-note { margin-top: 34px; }
+
+  /* ---------- health check panel ---------- */
+
+  .checkup {
+    margin-top: 56px;
+    background: var(--mint-soft);
+    border-radius: 22px;
+    padding: clamp(34px, 5vw, 54px);
+  }
+
+  .checkup h3 {
+    font-size: clamp(1.3rem, 3vw, 1.75rem);
+    color: var(--mint-deep);
+    margin-bottom: 16px;
+  }
+
+  .checkup p { margin: 0 0 18px; }
+
+  .checkup ul {
+    margin: 0 0 26px;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 26px;
+  }
+
+  .checkup li {
+    font-size: .97rem;
+    padding-left: 22px;
+    position: relative;
+  }
+
+  .checkup li::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 9px;
+    width: 9px; height: 9px;
+    border-radius: 50%;
+    background: var(--mint-deep);
+  }
+
+  .checkup .btn {
+    background: var(--mint-deep);
+    box-shadow: 0 8px 22px rgba(13, 120, 98, .26);
+  }
+
+  .checkup .btn:hover {
+    background: #129075;
+    box-shadow: 0 14px 30px rgba(13, 120, 98, .34);
+  }
+
+  /* ---------- responsive ---------- */
+
+  @media (max-width: 700px) {
+    .deal { grid-template-columns: 1fr; }
+    .included li { grid-template-columns: 1fr; gap: 4px; }
+    .included li:hover { padding-left: 10px; }
+    .steps li { grid-template-columns: 38px 1fr; gap: 16px; }
+    .steps li::before { width: 38px; height: 38px; font-size: .95rem; }
+    .steps::before { left: 18px; }
+    .skillset { grid-template-columns: 1fr; gap: 30px; }
+    .glow { filter: blur(70px); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .reveal, .hero h1 .w, .steps li::before, details p {
+      opacity: 1 !important;
+      transform: none !important;
+      animation: none !important;
+      transition: none !important;
+    }
+    .glow, .glow-c { animation: none !important; }
+    .btn, .included li, summary::after { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<div id="progress"></div>
+
+<header class="hero">
+  <div class="glow glow-a"></div>
+  <div class="glow glow-b"></div>
+  <div class="wrap">
+    <h1>
+      <span class="w accent">Free</span>
+      <span class="w accent">websites</span>
+      <span class="w">for</span>
+      <span class="w">New</span>
+      <span class="w">Zealand</span>
+      <span class="w">charities.</span>
+    </h1>
+    <p class="lede">I would love to build your group a proper website, completely free. You just cover hosting and a domain name, and you pay that straight to the provider rather than to me.</p>
+    <div class="hero-actions">
+      <a class="btn" href="#start">Get in touch</a>
+      <a class="btn btn-quiet" href="#why">Why is it free?</a>
+    </div>
+    <p class="aside">I am a technology student and ICT specialist in Auckland, keen to widen my creative range on real projects. You get a website your group could never quite justify spending donations on. Everybody wins.</p>
+  </div>
+</header>
+
+<section class="deal">
+  <div class="free reveal">
+    <h2>All of this is on me</h2>
+    <ul>
+      <li>Design and build of the site</li>
+      <li>Writing and tidying up your words</li>
+      <li>Setting it up on your hosting</li>
+      <li>Mobile and tablet layouts</li>
+      <li>Contact and donation links</li>
+      <li>Search engine setup, so Google can find you</li>
+      <li>A full SEO and site health score</li>
+      <li>A walkthrough so you can update it yourself</li>
+    </ul>
+  </div>
+  <div class="cost reveal d1">
+    <h2>The only bit you pay for</h2>
+    <ul>
+      <li>Domain name, roughly $30 a year</li>
+      <li>Hosting, roughly $10 to $20 a month</li>
+    </ul>
+    <p class="note">You buy both in your own name and keep the logins, so the site is genuinely yours from day one. I will point you at exactly the right provider and stay with you while you set it up, so none of it feels confusing. Plenty of hosts do charity discounts too, and I will happily go hunting for one before you spend a cent.</p>
+  </div>
+</section>
+
+<section class="band" id="why">
+  <div class="wrap reveal">
+    <h2>So why is it free?</h2>
+    <p>Honestly? Because I want to grow. Every group I build for pulls me somewhere new, a different audience, a different tone, a different puzzle to solve, and that is exactly how the work gets better. Practice projects sitting in a folder just do not stretch you the same way.</p>
+    <p>So it works out rather nicely on both sides. I get to help groups doing genuinely good things, and I get to widen my creative range while I am at it.</p>
+    <p>Charities and community groups felt like the obvious place to begin. So many of you are running on volunteer hours and goodwill, and a few thousand dollars for a website is money that could be doing so much more good elsewhere. You end up easier to find, join and donate to. I end up a better designer. That feels like a lovely trade to me.</p>
+    <p>No upsell waiting around the corner, no contract, no sneaky ongoing fee. And if you ever outgrow what I have built, take it with you with my blessing.</p>
+    <p class="sig">Tuba
+      <span>Auckland, New Zealand</span>
+    </p>
+  </div>
+</section>
+
+<section class="band band-white">
+  <div class="wrap reveal">
+    <h2>Here is what you get</h2>
+    <ul class="included">
+      <li>
+        <span class="what">Up to six pages</span>
+        <span class="detail">Usually home, about, what we do, get involved, donate and contact. If your group needs something different, we will happily shape it around you.</span>
+      </li>
+      <li>
+        <span class="what">Works on a phone</span>
+        <span class="detail">Nearly everyone will find you on their phone, so that layout gets built properly from the start rather than squeezed in later.</span>
+      </li>
+      <li>
+        <span class="what">Donation and volunteer links</span>
+        <span class="detail">Hooked up to whatever you already use, whether that is Givealittle, a bank account, a form or simply an email address.</span>
+      </li>
+      <li>
+        <span class="what">Findable on Google</span>
+        <span class="detail">Titles, descriptions and a sitemap all set up, so you turn up when someone searches for your cause in your area.</span>
+      </li>
+      <li>
+        <span class="what">Editable by you</span>
+        <span class="detail">Built so any volunteer can change text, swap photos and post news without needing to ring anyone first.</span>
+      </li>
+      <li>
+        <span class="what">An SEO and health score</span>
+        <span class="detail">I run your finished site through a proper audit covering speed, mobile performance, accessibility and search visibility, then hand you the score along with what I fixed to get it there.</span>
+      </li>
+      <li>
+        <span class="what">A friendly handover</span>
+        <span class="detail">A short written guide plus a proper walkthrough, so everything keeps humming along even when your volunteers change over.</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="band" id="skills">
+  <div class="wrap reveal">
+    <h2>Who is actually building it</h2>
+    <p>Fair question when someone offers to do something for nothing. Here is what I work with, so you know your site is in steady hands.</p>
+    <div class="skillset">
+      <div>
+        <h3>Platforms I build on</h3>
+        <ul class="pills">
+          <li>WordPress, any theme</li>
+          <li>Squarespace</li>
+          <li>Webflow</li>
+          <li>Wix</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Certified in</h3>
+        <ul class="pills code">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>Java</li>
+          <li>Python</li>
+        </ul>
+      </div>
+    </div>
+    <p class="skills-note">If your project needs something I have not touched before, I will go away and learn it. Picking things up quickly is honestly one of my favourite parts of this work, and it is half the reason I am offering these builds in the first place.</p>
+
+    <div class="checkup">
+      <h3>Already have a website? I will health check it for free</h3>
+      <p>You do not need a whole new site to get something useful out of me. Send me your web address and I will run a full audit, then send back a clear score with a plain English list of what is helping you and what is holding you back.</p>
+      <ul>
+        <li>Search visibility and SEO</li>
+        <li>Page speed</li>
+        <li>How it behaves on a phone</li>
+        <li>Accessibility</li>
+        <li>Broken links and errors</li>
+      </ul>
+      <a class="btn" href="#start">Send me your web address</a>
+    </div>
+  </div>
+</section>
+
+<section class="band band-white">
+  <div class="wrap">
+    <h2 class="reveal">How it works</h2>
+    <ol class="steps">
+      <li>
+        <div class="reveal">
+          <h3>Say hello</h3>
+          <p>Tell me who you are, what your group does, and whether you have a website already. A couple of sentences is plenty.</p>
+        </div>
+      </li>
+      <li>
+        <div class="reveal">
+          <h3>A quick chat</h3>
+          <p>About half an hour, phone or video, whichever suits. We work out what your site needs to do and what you already have, like a logo, photos or words.</p>
+        </div>
+      </li>
+      <li>
+        <div class="reveal">
+          <h3>Get your hosting sorted</h3>
+          <p>I will send you the exact provider and plan, and stay on the line while you sign up. Your account, your card, your logins.</p>
+        </div>
+      </li>
+      <li>
+        <div class="reveal">
+          <h3>I get building</h3>
+          <p>Usually two to three weeks, fitted around study and my day job. You will be the very first to see it.</p>
+        </div>
+      </li>
+      <li>
+        <div class="reveal">
+          <h3>We tweak it together</h3>
+          <p>Tell me what to change and I will sort it, twice over, so we get it feeling properly right for you.</p>
+        </div>
+      </li>
+      <li>
+        <div class="reveal">
+          <h3>Go live</h3>
+          <p>I publish it, walk you through editing it and hand over the notes. Every login stays with you.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap reveal">
+    <h2>Questions you might have</h2>
+    <div class="faq">
+      <details>
+        <summary>What is the catch?</summary>
+        <p>Just the one, and it is a happy one. I would love to show your finished site in my portfolio and mention your group by name. That permission is really what I am being paid in. If it does not suit you, say so and we can talk it through.</p>
+      </details>
+      <details>
+        <summary>Do we have to be a registered charity?</summary>
+        <p>Not at all. Community groups, sports clubs, marae, school groups and small volunteer-run causes are all very welcome. If you are a business then this one is not for you, but do get in touch anyway and I will point you somewhere good.</p>
+      </details>
+      <details>
+        <summary>Why can we not just use a free website builder?</summary>
+        <p>You absolutely can, and for some groups that really is the right call. Free plans do tend to pop ads on your pages, hand you an address like yourgroup.builder.com, and get clunky once you add real content. If none of that bothers you, go for it with my blessing.</p>
+      </details>
+      <details>
+        <summary>What happens if we need changes in a year?</summary>
+        <p>Flick me an email and I will help where I can, still free, though I cannot promise a lightning turnaround. That is exactly why your site is built for you to edit and why you keep all the logins.</p>
+      </details>
+      <details>
+        <summary>How many of these are you taking on?</summary>
+        <p>A few at a time. Between study and work, I would much rather do two really well than five in a rush. If my hands are full I will let you know right away rather than leave you hanging.</p>
+      </details>
+      <details>
+        <summary>Do you handle our donor or member data?</summary>
+        <p>Nope, and that is very much on purpose. I will link your site up to whatever donation or membership tool you already use, but your supporter information stays entirely with you.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="start">
+  <div class="glow-c"></div>
+  <div class="wrap reveal">
+    <h2>I would love to hear from you</h2>
+    <p>Tell me what your group does, roughly how many people are involved, and whether you have a website at the moment. If you already have one and just want the free health check, pop the web address in and that is all I need. I reply to every single message, even if it is just to say my hands are full right now.</p>
+    <a class="mail" href="mailto:7uba.ali@gmail.com?subject=Website%20for%20our%20charity">7uba.ali@gmail.com</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Made with a lot of care in Auckland. Come say hi on <a href="LINKEDIN-URL">LinkedIn</a> or email <a href="mailto:7uba.ali@gmail.com">7uba.ali@gmail.com</a>.</p>
+  </div>
+</footer>
+
+<script>
+  // hero headline, staggered word entrance
+  document.querySelectorAll('.hero h1 .w').forEach(function (el, i) {
+    el.style.animationDelay = (0.08 * i + 0.1) + 's';
+  });
+
+  // reveal blocks and step markers as they scroll into view
+  var targets = document.querySelectorAll('.reveal, .steps li');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+    targets.forEach(function (t) { io.observe(t); });
+  } else {
+    targets.forEach(function (t) { t.classList.add('in'); });
+  }
+
+  // scroll progress bar
+  var bar = document.getElementById('progress');
+  var ticking = false;
+  function updateBar() {
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
+    ticking = false;
+  }
+  window.addEventListener('scroll', function () {
+    if (!ticking) { window.requestAnimationFrame(updateBar); ticking = true; }
+  }, { passive: true });
+  updateBar();
+</script>
+
+</body>
+</html>
